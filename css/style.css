@@ -13,9 +13,19 @@ body{
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px;
 }
+#start__img img {
+  max-width: 300px;
+  display: block;
+  position: absolute;
+  border-radius: 30px;
+  top: 155px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
 #start__title {
   color: rgb(168, 5, 19);
-  padding-top: 120px;
+  padding-top: 270px;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -34,7 +44,7 @@ body{
   border-radius: 15px;
   cursor: pointer;
   max-width: 200px;
-  margin: 100px auto auto;
+  margin: 45px auto auto;
   color : rgb(85, 78, 78);
   text-transform: uppercase;
   transition: all 0.5s ease 0.1s;
@@ -45,10 +55,9 @@ body{
   box-shadow: 0 0 15px rgb(0, 0, 0);
 }
 #qImg{
-  padding: 20px 10px;
+  padding: 20px 10px 0;
   height : 160px;
   overflow: hidden;
-  
 }
 #qImg img{
   height: 90%;
@@ -70,6 +79,7 @@ body{
   padding : 10px
 }
 .choice{
+  background-color: rgba(194, 167, 45, 0.342);
   flex: 0 0 45%;
   margin-bottom: 15px;
   text-align: center;
@@ -87,9 +97,22 @@ body{
 #timer{
   margin-left : 25px; 
 }
+#counterBox {
+  position: relative;
+}
+#counterBox p:first-child {
+  position: absolute;
+  top: -14px;
+}
+#counterBox p:last-child {
+  position: absolute;
+  top: -14px;
+  left: 115px;
+}
 #counter{
-  font-size: 1.5em;
-  margin-left: 60px;
+  font-size: 1.2em;
+  margin-left: 80px;
+  font-weight: 700;
 }
 #btimeGauge{
   width : 150px;
@@ -121,16 +144,16 @@ body{
   position: absolute;
   top: 160px;
   left: 50%;
-  height: 300px;
+  height: 250px;
   transform: translate(-50%, 0);
-  background-color: rgb(233, 227, 227);
-  opacity: 0.9;
-  width : 400px;
+  background-color: rgba(233, 227, 227, 0.9);
+  width : 240px;
   border-radius: 20px;
-  box-shadow: 0px 5px 15px 0px;
+  box-shadow: 0 0 30px rgb(34, 34, 39);
   display: none;
   text-align: center;
   padding: 50px;
+  border: 1px solid;
 }
 #scoreContainer img{
   margin: 60px auto 40px;
@@ -164,6 +187,27 @@ body{
   box-shadow: 0 0 10px #FFF;  
   transition: all 0.5s ease 0.1s;
 }
+#answerNotice {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  height: 180px;
+  transform: translate(-50%, 0);
+  background-color: rgba(233, 227, 227, 0.9);
+  width : 240px;
+  border-radius: 20px;
+  display: none;
+  padding-top: 180px;
+  color: #a80513;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(114, 75, 25, 0.8);
+  box-shadow: 0 0 30px;
+  border: 1px solid;
+}
 
 @media (max-width:800px) {
   #container{
@@ -175,5 +219,12 @@ body{
   }
   .prog{
     margin: 0 3px;
+  }
+  #answerNotice {
+    top: 70px;
+  }
+  #start__img img {
+    top: 75px;
+    max-width: 280px;
   }
 }

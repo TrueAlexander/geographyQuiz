@@ -14,6 +14,8 @@ const timeGauge = document.getElementById("timeGauge");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 const exit = document.getElementById("exit");
+const answerNotice = document.getElementById("answerNotice");
+const startImg = document.getElementById("start__img");  
 
 //create our questions array
 
@@ -100,7 +102,7 @@ let questions = [
     correct: "C",
   },
   {
-    question: "Which country was a part of Yugoslavia till 1991?",
+    question: "Which country was a part of Yugoslavia before 1991?",
     imgSrc: "img/yugoslavia.png",
     choiceA: "Romania",
     choiceB: "Slovakia",
@@ -121,7 +123,7 @@ shuffle(questions);
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-let count = 0;
+let count = 10;
 const questionTime = 10; //10s
 const gaugeWidth = 150; //150px
 const gaugeUnit = gaugeWidth / questionTime;
@@ -130,8 +132,8 @@ let score = 0;
 
 //render a question
 function renderQuestion() {
+  document.getElementById("answerNotice").style.display = "none";
   let q = questions[runningQuestion];
-
   question.innerHTML = "<p>" + q.question + "</p>";
   qImg.innerHTML = "<img src=" + q.imgSrc + ">";
   choiceA.innerHTML = q.choiceA;
@@ -147,6 +149,7 @@ start.addEventListener("click", startQuiz);
 function startQuiz () {
   start.style.display = "none";
   startTitle.style.display = "none";
+  startImg.style.display = "none";
   exit.style.display = "block";
   renderQuestion();
   quiz.style.display = "block";
@@ -166,17 +169,18 @@ function renderProgress () {
 //counter render
 
 function renderCounter () {
-  if (count <= questionTime) {
+  if (count <= questionTime && count >= 0) {
     counter.innerHTML = count;
-    timeGauge.style.width = count * gaugeUnit + "px";
-    count++;
+    timeGauge.style.width = (10 - count) * gaugeUnit + "px";
+    count--;
   } else {
-    count = 0;
+    count = 10;
+    
     //change progress color to red
-    answerIsWrong ();
+    noticeTimeIsOver()
     if (runningQuestion < lastQuestion) {
       runningQuestion++;
-      renderQuestion();
+      setTimeout(renderQuestion, 1000);
     } else {
       //end the quiz and show the score
       clearInterval(TIMER);
@@ -198,34 +202,58 @@ function checkAnswer (answer) {
       //change progress color to red
       answerIsWrong();
   }
-  count = 0;
+  count = 10;
   if (runningQuestion < lastQuestion) {
     runningQuestion++;
-    renderQuestion();
+    setTimeout(renderQuestion, 1000);
   } else {
     //end the quiz and show the score
     clearInterval(TIMER);
-    scoreRender();
+    setTimeout(scoreRender, 1000);
   }
 }
 
 ///answer is correct
 
 function answerIsCorrect () {
+  noticeCorrect();
   document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+
 }
 
 ///answer is wrong
 
 function answerIsWrong () {
+  noticeWrong();
   document.getElementById(runningQuestion).style.backgroundColor = "#f00";
 }
+
+function noticeCorrect() {
+  answerNotice.innerHTML = "Right answer!!!";
+  answerNotice.style.color = "darkgreen";
+  document.getElementById("answerNotice").style.display = "block";
+}
+
+function noticeWrong() {
+  answerNotice.innerHTML = "Ops.. You are wrong..";
+  answerNotice.style.color = "#a80513";
+  document.getElementById("answerNotice").style.display = "block";
+}
+
+function noticeTimeIsOver() {
+  answerNotice.innerHTML = "Time is over!";
+  document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+  answerNotice.style.color = "#a80513";
+  document.getElementById("answerNotice").style.display = "block";
+}
+
 
 //score Render
 
 function scoreRender() {
+  answerNotice.style.display = "none";
   scoreDiv.style.display = "block";
-
+  
   //calculate the amount of question percent answered
   const scorePerCent = Math.round(100 * score / questions.length);
   //choose the image based on the scorePerCent
@@ -237,7 +265,10 @@ function scoreRender() {
             "../img/1.png";  
   scoreDiv.innerHTML = "<img src = "+ img +">";
   scoreDiv.innerHTML += "<p>" + scorePerCent + "%</p>";
-
+  choiceA.onclick =  null;
+  choiceB.onclick =  null;
+  choiceC.onclick =  null;
+  choiceD.onclick =  null;
 }
 
 function exitTheGame() {

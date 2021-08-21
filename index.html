@@ -12,6 +12,9 @@
 
 <body>
     <div id="container">
+        <div id="start__img">
+            <img src="img/globe2.jpg" alt="globe">
+        </div>
         <div id="start__title">Geography quiz!</div>
         <div id="start">
             Start the Game!
@@ -31,7 +34,12 @@
                 <div class="choice" id="D" onclick="checkAnswer('D')"></div>
             </div>
             <div id="timer">
-                <div id="counter"></div>
+                <div id="counterBox">
+                    <p>time left:</p>
+                    <div id="counter"></div>
+                    <p>sec.</p>  
+                </div>
+                
                 <div id="btimeGauge"></div>
                 <div id="timeGauge"></div>
             </div>
@@ -42,6 +50,9 @@
         </div>
         <div id="scoreContainer" style="display: none;">
             <img src="#" alt="smile"><p>50%</p>
+        </div>
+        <div id="answerNotice">
+            You are right!!!
         </div>
     </div>
     <div id="exit" onclick="exitTheGame()">Exit the game!</div>
