@@ -20,7 +20,7 @@ const exit = document.getElementById("exit");
 let questions = [
   {
     question: "Choose the capital of the country",
-    imgSrc: "img/germany.png",
+    imgSrc: "..img/germany.png",
     choiceA: "Madrid",
     choiceB: "Berlin",
     choiceC: "Oslo",
@@ -29,7 +29,7 @@ let questions = [
   },
   {
     question: "Where does situated this country?",
-    imgSrc: "img/portuguese.png",
+    imgSrc: "..img/portuguese.png",
     choiceA: "Africa",
     choiceB: "South America",
     choiceC: "Asia",
@@ -47,7 +47,7 @@ let questions = [
   },
   {
     question: "What's the capital of Brazil?",
-    imgSrc: "img/brazil.png",
+    imgSrc: "..img/brazil.png",
     choiceA: "Sao Paulo",
     choiceB: "Brasilia",
     choiceC: "Rio de Janeiro",
@@ -56,7 +56,7 @@ let questions = [
   },
   {
     question: "Guarani is one of the official language of...?",
-    imgSrc: "img/guarani.jpg",
+    imgSrc: "..img/guarani.jpg",
     choiceA: "Paraguay",
     choiceB: "Kongo",
     choiceC: "Indonesia",
@@ -65,7 +65,7 @@ let questions = [
   },
   {
     question: "What is the capital of Philippines?",
-    imgSrc: "img/philippines.png",
+    imgSrc: "..img/philippines.png",
     choiceA: "Jakarta",
     choiceB: "Hong Kong",
     choiceC: "Manila",
@@ -74,7 +74,7 @@ let questions = [
   },
   {
     question: "What's the name of the country?",
-    imgSrc: "img/georgia.png",
+    imgSrc: "..img/georgia.png",
     choiceA: "Armenia",
     choiceB: "England",
     choiceC: "Croatia",
@@ -83,7 +83,7 @@ let questions = [
   },
   {
     question: "Which is the highest peak in the world?",
-    imgSrc: "img/everest.jpg",
+    imgSrc: "..img/everest.jpg",
     choiceA: "Mont Blanc",
     choiceB: "Everest",
     choiceC: "Kilimanjaro",
@@ -92,7 +92,7 @@ let questions = [
   },
   {
     question: "What is the deepest lake in the world??",
-    imgSrc: "img/baikal.jpg",
+    imgSrc: "..img/baikal.jpg",
     choiceA: "Victoria",
     choiceB: "Michigan",
     choiceC: "Baikal",
@@ -101,7 +101,7 @@ let questions = [
   },
   {
     question: "Which country was a part of Yugoslavia till 1991?",
-    imgSrc: "img/yugoslavia.png",
+    imgSrc: "..img/yugoslavia.png",
     choiceA: "Romania",
     choiceB: "Slovakia",
     choiceC: "Czech Republic",
