@@ -3,6 +3,7 @@ body{
   background-image: url(../img/compass-2946959_1920.jpg);
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
 #container{
   background-image: url(../img/vintage-concrete.png);
@@ -10,7 +11,9 @@ body{
   height: 450px;
   max-width : 700px;
   border-radius: 20px;
-  box-shadow: 0px 5px 15px 0px;  
+  box-shadow: 0px 5px 15px 0px;
+  
+ 
 }
 #start__title {
   color: rgb(168, 5, 19);
@@ -32,10 +35,8 @@ body{
   padding: 10px;
   border-radius: 15px;
   cursor: pointer;
-  position: absolute;
-  left: 50%;
-  top: 65%;
-  transform: translate(-50%, -50%);
+  max-width: 200px;
+  margin: 100px auto auto;
   color : rgb(85, 78, 78);
   text-transform: uppercase;
   transition: all 0.5s ease 0.1s;
