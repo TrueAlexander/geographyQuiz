@@ -7,13 +7,11 @@ body{
 }
 #container{
   background-image: url(../img/vintage-concrete.png);
-  margin : 130px auto;
+  margin : 130px auto auto;
   height: 450px;
   max-width : 700px;
   border-radius: 20px;
   box-shadow: 0px 5px 15px 0px;
-  
- 
 }
 #start__title {
   color: rgb(168, 5, 19);
@@ -48,11 +46,14 @@ body{
 }
 #qImg{
   padding: 20px 10px;
-  text-align: center;
-  height : 150px;
+  height : 160px;
+  overflow: hidden;
+  
 }
 #qImg img{
-  height: 100%;
+  height: 90%;
+  display: block;
+  margin: 0 auto;
 }
 #question{
   text-align: center;
@@ -114,8 +115,7 @@ body{
   border: 1px solid #000;
   display: inline-block;
   border-radius: 50%;
-  margin-left : 5px;
-  margin-right : 5px;
+  margin:0 5px;
 }
 #scoreContainer{
   position: absolute;
@@ -147,7 +147,7 @@ body{
   color: #FFF;
   position: relative;
   width: 150px;
-  bottom: 100px;
+  bottom: -15px;
   text-align: center;
   left: 50%;
   transform: translate(-50%, 0);
@@ -163,4 +163,17 @@ body{
 #exit:hover {
   box-shadow: 0 0 10px #FFF;  
   transition: all 0.5s ease 0.1s;
+}
+
+@media (max-width:800px) {
+  #container{
+    margin : 40px auto auto;
+    height: 465px;
+  }
+  #scoreContainer{
+    top: 80px;
+  }
+  .prog{
+    margin: 0 3px;
+  }
 }
