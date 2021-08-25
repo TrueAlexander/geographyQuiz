@@ -4,7 +4,7 @@ body{
   background-image: url(../img/compass-2946959_1920.jpg);
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 .wrapper {
