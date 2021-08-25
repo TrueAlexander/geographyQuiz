@@ -231,20 +231,20 @@ function answerIsWrong () {
 function noticeCorrect() {
   answerNotice.innerHTML = "Right answer!!!";
   answerNotice.style.color = "darkgreen";
-  document.getElementById("answerNotice").style.display = "block";
+  document.getElementById("answerNotice").style.display = "flex";
 }
 
 function noticeWrong() {
   answerNotice.innerHTML = "Ops.. You are wrong..";
   answerNotice.style.color = "#a80513";
-  document.getElementById("answerNotice").style.display = "block";
+  document.getElementById("answerNotice").style.display = "flex";
 }
 
 function noticeTimeIsOver() {
   answerNotice.innerHTML = "Time is over!";
   document.getElementById(runningQuestion).style.backgroundColor = "#f00";
   answerNotice.style.color = "#a80513";
-  document.getElementById("answerNotice").style.display = "block";
+  document.getElementById("answerNotice").style.display = "flex";
 }
 
 
