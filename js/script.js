@@ -15,11 +15,11 @@ const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 const exit = document.getElementById("exit");
 const answerNotice = document.getElementById("answerNotice");
-const startImg = document.getElementById("start__img");  
+const startImg = document.getElementById("start__img");
 
 //create our questions array
 
-let questions = [
+const questions = [
   {
     question: "Choose the capital of the country",
     imgSrc: "img/germany.png",
@@ -140,13 +140,13 @@ function renderQuestion() {
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
   choiceD.innerHTML = q.choiceD;
-} 
+}
 
 start.addEventListener("click", startQuiz);
 
 //start quiz
 
-function startQuiz () {
+function startQuiz() {
   start.style.display = "none";
   startTitle.style.display = "none";
   startImg.style.display = "none";
@@ -160,22 +160,22 @@ function startQuiz () {
 
 //render progress
 
-function renderProgress () {
+function renderProgress() {
   for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
-    progress.innerHTML += "<div class = 'prog' id = "+ qIndex +"></div>";
+    progress.innerHTML += "<div class = 'prog' id = " + qIndex + "></div>";
   }
-} 
+}
 
 //counter render
 
-function renderCounter () {
+function renderCounter() {
   if (count <= questionTime && count >= 0) {
     counter.innerHTML = count;
     timeGauge.style.width = (10 - count) * gaugeUnit + "px";
     count--;
   } else {
     count = 10;
-    
+
     //change progress color to red
     noticeTimeIsOver()
     if (runningQuestion < lastQuestion) {
@@ -191,16 +191,16 @@ function renderCounter () {
 
 //checkAnswer
 
-function checkAnswer (answer) {
+function checkAnswer(answer) {
   if (answer == questions[runningQuestion].correct) {
     //answer is correct
     score++;
     //change progress color to green
     answerIsCorrect();
   } else {
-      //answer is wrong
-      //change progress color to red
-      answerIsWrong();
+    //answer is wrong
+    //change progress color to red
+    answerIsWrong();
   }
   count = 10;
   if (runningQuestion < lastQuestion) {
@@ -215,7 +215,7 @@ function checkAnswer (answer) {
 
 ///answer is correct
 
-function answerIsCorrect () {
+function answerIsCorrect() {
   noticeCorrect();
   document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 
@@ -223,7 +223,7 @@ function answerIsCorrect () {
 
 ///answer is wrong
 
-function answerIsWrong () {
+function answerIsWrong() {
   noticeWrong();
   document.getElementById(runningQuestion).style.backgroundColor = "#f00";
 }
@@ -253,25 +253,25 @@ function noticeTimeIsOver() {
 function scoreRender() {
   answerNotice.style.display = "none";
   scoreDiv.style.display = "block";
-  
+
   //calculate the amount of question percent answered
   const scorePerCent = Math.round(100 * score / questions.length);
   //choose the image based on the scorePerCent
 
-  let img = (scorePerCent >= 80) ? "img/5.png" : 
-            (scorePerCent >= 60) ? "img/4.png" : 
-            (scorePerCent >= 40) ? "img/3.png" : 
-            (scorePerCent >= 20) ? "img/2.png" : 
-            "img/1.png";  
-  scoreDiv.innerHTML = "<img src = "+ img +">";
+  let img = (scorePerCent >= 80) ? "img/5.png" :
+    (scorePerCent >= 60) ? "img/4.png" :
+      (scorePerCent >= 40) ? "img/3.png" :
+        (scorePerCent >= 20) ? "img/2.png" :
+          "img/1.png";
+  scoreDiv.innerHTML = "<img src = " + img + ">";
   scoreDiv.innerHTML += "<p>" + scorePerCent + "%</p>";
-  choiceA.onclick =  null;
-  choiceB.onclick =  null;
-  choiceC.onclick =  null;
-  choiceD.onclick =  null;
+  choiceA.onclick = null;
+  choiceB.onclick = null;
+  choiceC.onclick = null;
+  choiceD.onclick = null;
 }
 
 function exitTheGame() {
-   ////go to the Start Game button
+  ////go to the Start Game button
   location.reload();
 }

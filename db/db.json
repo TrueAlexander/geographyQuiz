@@ -1,0 +1,115 @@
+{
+	"questions": [
+		{
+			"id": 0,
+			"question": "Choose the capital of the country",
+			"imgSrc": "img/germany.png",
+			"choiceA": "Madrid",
+			"choiceB": "Berlin",
+			"choiceC": "Oslo",
+			"choiceD": "Budapest",
+			"correct": "B",
+			"category": "geography"
+		},
+		{
+			"id": 1,
+			"question": "Where does situated this country?",
+			"imgSrc": "img/portuguese.png",
+			"choiceA": "Africa",
+			"choiceB": "South America",
+			"choiceC": "Asia",
+			"choiceD": "Europe",
+			"correct": "D",
+			"category": "geography"
+		},
+		{
+			"id": 2,
+			"question": "Where does situated this country?",
+			"imgSrc": "img/angola.png",
+			"choiceA": "South America",
+			"choiceB": "Asia",
+			"choiceC": "Europe",
+			"choiceD": "Africa",
+			"correct": "D",
+			"category": "geography"
+		},
+		{
+			"id": 3,
+			"question": "What's the capital of Brazil?",
+			"imgSrc": "img/brazil.png",
+			"choiceA": "Sao Paulo",
+			"choiceB": "Brasilia",
+			"choiceC": "Rio de Janeiro",
+			"choiceD": "Buenos Aires",
+			"correct": "B",
+			"category": "geography"
+		},
+		{
+			"id": 4,
+			"question": "Guarani is one of the official language of...?",
+			"imgSrc": "img/guarani.jpg",
+			"choiceA": "Paraguay",
+			"choiceB": "Kongo",
+			"choiceC": "Indonesia",
+			"choiceD": "Australia",
+			"correct": "A",
+			"category": "geography"
+		},
+		{
+			"id": 5,
+			"question": "What is the capital of Philippines?",
+			"imgSrc": "img/philippines.png",
+			"choiceA": "Jakarta",
+			"choiceB": "Hong Kong",
+			"choiceC": "Manila",
+			"choiceD": "Kuala Lumpur",
+			"correct": "C",
+			"category": "geography"
+		},
+		{
+			"id": 6,
+			"question": "What's the name of the country?",
+			"imgSrc": "img/georgia.png",
+			"choiceA": "Armenia",
+			"choiceB": "England",
+			"choiceC": "Croatia",
+			"choiceD": "Georgia",
+			"correct": "D",
+			"category": "geography"
+		},
+		{
+			"id": 7,
+			"question": "Which is the highest peak in the world?",
+			"imgSrc": "img/everest.jpg",
+			"choiceA": "Mont Blanc",
+			"choiceB": "Everest",
+			"choiceC": "Kilimanjaro",
+			"choiceD": "Elbrus",
+			"correct": "B",
+			"category": "geography"
+		},
+		{
+			"id": 8,
+			"question": "What is the deepest lake in the world??",
+			"imgSrc": "img/baikal.jpg",
+			"choiceA": "Victoria",
+			"choiceB": "Michigan",
+			"choiceC": "Baikal",
+			"choiceD": "Titicaca",
+			"correct": "C",
+			"category": "geography"
+		},
+		{
+			"id": 9,
+			"question": "Which country was a part of Yugoslavia before 1991?",
+			"imgSrc": "img/yugoslavia.png",
+			"choiceA": "Romania",
+			"choiceB": "Slovakia",
+			"choiceC": "Czech Republic",
+			"choiceD": "Slovenia",
+			"correct": "D",
+			"category": "geography"
+		}
+	]
+}
+//https://trivia-database-ac015-default-rtdb.firebaseio.com/
